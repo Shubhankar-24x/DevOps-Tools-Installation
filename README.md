@@ -26,13 +26,13 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update -y
 sudo apt-get install jenkins -y
 ```
-3.  - <b id="Sonar">Install and configure SonarQube (Master machine)</b>
+3.  - <b id="Sonar">Install and configure SonarQube </b>
 ```bash
 docker run -itd --name SonarQube-Server -p 9000:9000 sonarqube:lts-community
 ```
 
 
-4.  - <b id="Trivy">Install Trivy (Jenkins Worker)</b>
+4.  - <b id="Trivy">Install Trivy </b>
 ```bash
 sudo apt-get install wget apt-transport-https gnupg lsb-release -y
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
