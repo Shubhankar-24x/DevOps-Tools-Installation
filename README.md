@@ -1,6 +1,6 @@
 # DevOps-Tools-Installation
 
-1. # Install & Configure Docker by using below command, "NewGrp docker" will refresh the group config hence no need to restart the EC2 machine.
+1.  Install & Configure Docker by using below command, "NewGrp docker" will refresh the group config hence no need to restart the EC2 machine.
 
 ```bash
 sudo apt-get update
@@ -11,7 +11,7 @@ sudo usermod -aG docker ubuntu && newgrp docker
 ```
 
 
-2. # - <b id="Jenkins">Install and configure Jenkins </b>
+2.  - <b id="Jenkins">Install and configure Jenkins </b>
 ```bash
 sudo apt update -y
 sudo apt install fontconfig openjdk-17-jre -y
@@ -26,13 +26,13 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update -y
 sudo apt-get install jenkins -y
 ```
-3. # - <b id="Sonar">Install and configure SonarQube (Master machine)</b>
+3.  - <b id="Sonar">Install and configure SonarQube (Master machine)</b>
 ```bash
 docker run -itd --name SonarQube-Server -p 9000:9000 sonarqube:lts-community
 ```
 
 
-4. # - <b id="Trivy">Install Trivy (Jenkins Worker)</b>
+4.  - <b id="Trivy">Install Trivy (Jenkins Worker)</b>
 ```bash
 sudo apt-get install wget apt-transport-https gnupg lsb-release -y
 wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
