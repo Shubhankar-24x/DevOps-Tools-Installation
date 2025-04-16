@@ -41,7 +41,7 @@ sudo apt-get update -y
 sudo apt-get install trivy -y
 ```
 
-5. - <b id="Install Maven </b>
+5. - <b id="Maven"> Install Maven </b>
 ```bash
 sudo apt install maven -y
 ```
