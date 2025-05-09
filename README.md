@@ -40,7 +40,15 @@ echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main |
 sudo apt-get update -y
 sudo apt-get install trivy -y
 
-5.  - <b id="Kubectl">Install Kubectl </b>
+
+
+5. - <b id="Maven"> Install Maven </b>
+```bash
+sudo apt install maven -y
+```
+
+
+6.  - <b id="Kubectl">Install Kubectl </b>
 ```bash
  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -49,9 +57,4 @@ mkdir -p ~/.local/bin
 mv ./kubectl ~/.local/bin/kubectl
 # and then append (or prepend) ~/.local/bin to $PATH
 kubectl version --client
-```
-
-5. - <b id="Maven"> Install Maven </b>
-```bash
-sudo apt install maven -y
 ```
