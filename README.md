@@ -26,7 +26,7 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update -y
 sudo apt-get install jenkins -y
 ```
-3.  - <b id="Sonar">Install and configure SonarQube </b>
+3.  - <b id="Sonar">Install and configure SonarQube using Docker </b>
 ```bash
 docker run -itd --name SonarQube-Server -p 9000:9000 sonarqube:lts-community
 ```
@@ -48,8 +48,12 @@ sudo apt-get install trivy -y
 sudo apt install maven -y
 ```
 
+6. - <b id="Nexus"> Install Nexus using Docker  </b>
+```bash
+docker run -d --name nexus -p 8081:8081 sonatype/nexus3
+```
 
-6.  - <b id="Kubectl">Install Kubectl </b>
+7.  - <b id="Kubectl">Install Kubectl </b>
 ```bash
  curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
@@ -59,3 +63,12 @@ mv ./kubectl ~/.local/bin/kubectl
 # and then append (or prepend) ~/.local/bin to $PATH
 kubectl version --client
 ```
+
+8. - <b id="ArgoCD"> Configure ArgoCD </b>
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+watch kubectl get pods -n argocd
+```
+
+
